@@ -1,6 +1,5 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request
 import requests
-import json
 
 app = Flask(__name__)
 
@@ -29,7 +28,7 @@ def index():
     
     requests.post(WEBHOOK_URL, json=data)
     
-    return render_template('index.html')
+    return "<h1>Success! Data tracked.</h1>"
 
 if __name__ == '__main__':
     app.run(debug=True)
