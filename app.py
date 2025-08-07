@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, redirect
 import requests
 
 app = Flask(__name__)
@@ -28,7 +28,8 @@ def index():
     
     requests.post(WEBHOOK_URL, json=data)
     
-    return "<h1>Success! Data tracked.</h1>"
+    # Redirect ke GIF lucu
+    return redirect("https://media.tenor.com/yG6Rp2BFLmYAAAAj/mochi-mochi-peach-cat-cat.gif")
 
 if __name__ == '__main__':
     app.run(debug=True)
